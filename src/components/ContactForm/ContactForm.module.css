@@ -1,3 +1,6 @@
+.modal_button {
+  width: 80px;
+}
 .box {
   display: flex;
   flex-flow: column;

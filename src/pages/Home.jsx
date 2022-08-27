@@ -1,5 +1,5 @@
 export const Home = () => (
   <main>
-    <h2>Home page</h2>
+    <p>Welcome to my contacts application</p>
   </main>
 );

@@ -1,23 +1,22 @@
 import styles from './AuthNav.module.css';
 import { NavLink } from 'react-router-dom';
+import { Nav, Container } from 'react-bootstrap';
 
 export const AuthNav = () => {
   return (
-    <nav>
-      <NavLink
-        to="/login"
-        className={styles.link}
-        //activeClassName={styles.activeLink}
-      >
-        Login
-      </NavLink>
-      <NavLink
-        to="/register"
-        className={styles.link}
-        //activeClassName={styles.activeLink}
-      >
-        Register
-      </NavLink>
-    </nav>
+    <Container className="justify-content-end">
+      <Nav>
+        <Nav.Item>
+          <Nav.Link as={NavLink} to="/login">
+            Login
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={NavLink} to="/register">
+            Register
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+    </Container>
   );
 };

@@ -1,20 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './UserMenu.module.css';
 import { authSelectors, authOperations } from 'redux/auth';
+import { Nav, Container, Navbar, Button } from 'react-bootstrap';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUsername);
   return (
-    <div className={styles.container}>
-      <span className={styles.name}>Welcome, {name} </span>
-      <button
-        type="button"
-        className={styles.button}
+    <Container className="justify-content-end">
+      <Navbar.Text>Welcome, {name}</Navbar.Text>
+      <Nav.Link
+        as={Button}
+        variant="light"
+        className="mx-2"
         onClick={() => dispatch(authOperations.logOut())}
       >
         Logout
-      </button>
-    </div>
+      </Nav.Link>
+    </Container>
   );
 };

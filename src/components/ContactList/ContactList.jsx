@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useMemo } from 'react';
 import { ContactListItem } from '../ContactListItem/ContactListItem';
 import { contactsSelectors } from 'redux/contacts';
+import { Container } from 'react-bootstrap';
 
 export const ContactList = () => {
   const contacts = useSelector(contactsSelectors.getContacts);
@@ -21,6 +22,14 @@ export const ContactList = () => {
     );
   }, [filter, contacts]);
 
+  return (
+    <Container>
+      {visibleContacts &&
+        visibleContacts.map(contact => (
+          <ContactListItem key={contact.id} {...contact} />
+        ))}
+    </Container>
+  );
   return (
     <ul className={styles.contactList}>
       {visibleContacts &&

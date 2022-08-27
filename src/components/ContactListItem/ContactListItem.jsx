@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';
 import { useState } from 'react';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 
 export const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -18,14 +19,29 @@ export const ContactListItem = ({ id, name, number }) => {
     }
     setIsDeleting(false);
   };
+
   return (
-    <li key={id} className={styles.contactList_item}>
-      <p>
-        {name}: {number}
-      </p>
-      <button className={styles.button} onClick={() => handleDelete(id)}>
-        {isDeleting ? 'Deleting..' : 'Delete'}
-      </button>
-    </li>
+    <Card key={id} className="mt-2">
+      <Card.Body>
+        <Row>
+          <Col>
+            <Card.Title>{name}</Card.Title>
+            <Card.Subtitle>{number}</Card.Subtitle>
+          </Col>
+          {/* <Col className="d-flex justify-content-end">
+            <Button variant="light" onClick={handleDelete}>
+              Delete
+            </Button>
+          </Col> */}
+        </Row>
+      </Card.Body>
+      <Card.Footer>
+        <Col className="d-flex justify-content-end">
+          <Button variant="light" onClick={handleDelete}>
+            {isDeleting ? 'Deleting..' : 'Delete'}
+          </Button>
+        </Col>
+      </Card.Footer>
+    </Card>
   );
 };

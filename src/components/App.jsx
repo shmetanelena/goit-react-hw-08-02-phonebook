@@ -1,5 +1,5 @@
 import { Toaster } from 'react-hot-toast';
-import { Container } from './Container';
+// import { Container } from './Container';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from 'pages/Home';
 import { NotFound } from 'pages/NotFound';
@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authOperations, authSelectors } from 'redux/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { Container } from 'react-bootstrap';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ export const App = () => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
   return (
-    <Container>
+    <Container fluid>
       {isFetchingCurrentUser ? (
         <h1>Loading user ...</h1>
       ) : (
