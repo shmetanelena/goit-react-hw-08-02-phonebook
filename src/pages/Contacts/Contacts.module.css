@@ -1,0 +1,18 @@
+.section {
+  height: 100%;
+  /* width: 100%; */
+  padding: 5px;
+  /* background-color: #9b8f99; */
+  color: rgb(190, 239, 222);
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  width: 600px;
+  padding: 10px;
+  box-shadow: 10px 5px 10px 5px rgba(20, 1, 1, 0.89);
+}
