@@ -9,3 +9,6 @@ body {
 .card {
   min-width: 480px !important;
 }
+.cont {
+  max-width: 800px;
+}
