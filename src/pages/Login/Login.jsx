@@ -74,7 +74,7 @@ export const Login = () => {
                 <Col className="d-flex justify-content-center">
                   <Button
                     type="submit"
-                    variant="outline-primary"
+                    variant="outline-info"
                     disabled={isSubmitting}
                   >
                     Login
