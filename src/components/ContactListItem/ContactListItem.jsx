@@ -1,4 +1,3 @@
-import styles from './ContactListItem.module.css';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { contactsOperations } from 'redux/contacts';

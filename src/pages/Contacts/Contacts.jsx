@@ -16,10 +16,9 @@ export const Contacts = () => {
     dispatch(contactsOperations.fetchContacts());
   }, [dispatch]);
 
-  const handleCLoseModal = () => setIsModal(false);
   return (
     <Container>
-      <ContactForm show={isModal} close={handleCLoseModal} />
+      <ContactForm show={isModal} handleCLose={() => setIsModal(false)} />
       <Col className=" d-flex justify-content-end my-3">
         <Button variant="outline-success" onClick={() => setIsModal(true)}>
           Add contact

@@ -1,4 +1,3 @@
-import styles from './Filter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { contactsActions, contactsSelectors } from 'redux/contacts';
 import { Form, Container } from 'react-bootstrap';

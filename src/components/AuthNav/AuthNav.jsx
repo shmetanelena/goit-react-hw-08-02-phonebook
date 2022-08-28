@@ -1,4 +1,3 @@
-import styles from './AuthNav.module.css';
 import { NavLink } from 'react-router-dom';
 import { Nav, Container } from 'react-bootstrap';
 

@@ -13,7 +13,7 @@ export const UserMenu = () => {
         as={Button}
         variant="outline-info"
         size="lg"
-        className="mx-2"
+        className={styles.modal_button}
         onClick={() => dispatch(authOperations.logOut())}
       >
         Logout

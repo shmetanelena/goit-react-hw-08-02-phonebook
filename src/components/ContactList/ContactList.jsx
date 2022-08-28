@@ -1,4 +1,3 @@
-import styles from './ContactList.module.css';
 import { useSelector } from 'react-redux';
 import { useMemo } from 'react';
 import { ContactListItem } from '../ContactListItem/ContactListItem';
@@ -29,13 +28,5 @@ export const ContactList = () => {
           <ContactListItem key={contact.id} {...contact} />
         ))}
     </Container>
-  );
-  return (
-    <ul className={styles.contactList}>
-      {visibleContacts &&
-        visibleContacts.map(contact => (
-          <ContactListItem key={contact.id} {...contact} />
-        ))}
-    </ul>
   );
 };
