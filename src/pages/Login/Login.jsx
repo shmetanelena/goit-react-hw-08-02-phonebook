@@ -62,7 +62,9 @@ export const Login = () => {
             </Form.Control.Feedback>
           </Form.Group>
           <Col className="d-flex justify-content-center">
-            <Button type="submit">Login</Button>
+            <Button type="submit" variant="outline-primary">
+              Login
+            </Button>
           </Col>
         </Form>
       </Card.Body>

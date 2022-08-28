@@ -20,13 +20,17 @@ export const Contacts = () => {
   return (
     <Container>
       <ContactForm show={isModal} close={handleCLoseModal} />
-      <Col className="d-flex justify-content-end my-3">
-        <Button onClick={() => setIsModal(true)}>Add contact</Button>
+      <Col className=" d-flex justify-content-end my-3">
+        <Button variant="outline-success" onClick={() => setIsModal(true)}>
+          Add contact
+        </Button>
       </Col>
       <hr />
       <Filter />
       {isLoading ? (
-        <Spinner animation="border" role="status" />
+        <div className="d-flex justify-content-center my-3">
+          <Spinner animation="border" role="status" />
+        </div>
       ) : (
         <ContactList />
       )}

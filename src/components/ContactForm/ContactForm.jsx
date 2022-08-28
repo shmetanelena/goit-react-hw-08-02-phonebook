@@ -92,13 +92,14 @@ export const ContactForm = ({ show, close }) => {
         <Modal.Footer>
           <Button
             type="submit"
+            variant="outline-success"
             className={styles.modal_button}
             disabled={isSaving}
           >
             Add
           </Button>
           <Button
-            variant="secondary"
+            variant="outline-secondary"
             onClick={handleCLose}
             className={styles.modal_button}
           >

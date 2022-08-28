@@ -29,7 +29,7 @@ export const ContactListItem = ({ id, name, number }) => {
             <Card.Subtitle>{number}</Card.Subtitle>
           </Col>
           {/* <Col className="d-flex justify-content-end">
-            <Button variant="light" onClick={handleDelete}>
+            <Button variant="outline-success" onClick={handleDelete}>
               Delete
             </Button>
           </Col> */}
@@ -37,7 +37,7 @@ export const ContactListItem = ({ id, name, number }) => {
       </Card.Body>
       <Card.Footer>
         <Col className="d-flex justify-content-end">
-          <Button variant="light" onClick={handleDelete}>
+          <Button variant="outline-warning" onClick={handleDelete}>
             {isDeleting ? 'Deleting..' : 'Delete'}
           </Button>
         </Col>

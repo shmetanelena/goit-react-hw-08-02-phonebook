@@ -11,7 +11,8 @@ export const UserMenu = () => {
       <Navbar.Text>Welcome, {name}</Navbar.Text>
       <Nav.Link
         as={Button}
-        variant="light"
+        variant="outline-info"
+        size="lg"
         className="mx-2"
         onClick={() => dispatch(authOperations.logOut())}
       >

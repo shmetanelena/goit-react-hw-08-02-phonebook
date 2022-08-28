@@ -82,7 +82,9 @@ export const Register = () => {
             </Form.Control.Feedback>
           </Form.Group>
           <Col className="d-flex justify-content-center">
-            <Button type="submit">Register</Button>
+            <Button variant="outline-success" type="submit">
+              Register
+            </Button>
           </Col>
         </Form>
       </Card.Body>
