@@ -1,5 +1,4 @@
 import { combineReducers, createReducer } from '@reduxjs/toolkit';
-import { act } from 'react-dom/test-utils';
 import contactsActions from './contactsActions';
 import contactsOperations from './contactsOperations';
 
@@ -8,10 +7,13 @@ const filter = createReducer('', {
 });
 
 const items = createReducer([], {
-  [contactsOperations.fetchContacts.fulfilled]: (_, { payload }) =>
+  [contactsOperations.fetchContacts.fulfilled]: (_, { payload }) => payload,
+  [contactsOperations.addContact.fulfilled]: (state, { payload }) => [
+    ...state,
     payload,
-  [contactsOperations.addContact.fulfilled]: (state, { payload }) => [...state, payload],
-  [contactsOperations.deleteContact.fulfilled]: (state, {payload}) => state.filter(contact => contact.id !== payload),
+  ],
+  [contactsOperations.deleteContact.fulfilled]: (state, { payload }) =>
+    state.filter(contact => contact.id !== payload),
 });
 
 const isLoading = createReducer(false, {
