@@ -17,7 +17,7 @@ export const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Container className={styles.container}>
+    <Container className={styles.container_main}>
       {isModal && <ContactForm handleCLose={() => setIsModal(false)} />}
 
       <Col className=" d-flex justify-content-end my-3">
