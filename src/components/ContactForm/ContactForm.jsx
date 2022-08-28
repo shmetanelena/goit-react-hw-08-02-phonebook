@@ -44,88 +44,90 @@ export const ContactForm = ({ show, handleCLose }) => {
         'Invalid value'
       ),
   });
-
+  //background-color: #ececec;
   return (
     <Modal show={show} onHide={handleCLose} keyboard>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={schema}
-        onSubmit={async values => {
-          console.log(values);
-          if (values.name === '' || values.number === '') return;
-          try {
-            await dispatch(contactsOperations.addContact(values)).unwrap();
-            toast.success('Contact created');
-            handleCLose();
-          } catch (e) {
-            toast.error('Error occured');
-          }
-        }}
-      >
-        {({
-          values,
-          handleSubmit,
-          handleChange,
-          touched,
-          errors,
-          isSubmitting,
-        }) => (
-          <Form onSubmit={handleSubmit} noValidate>
-            <Modal.Header closeButton>
-              <Modal.Title>New contact</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Form.Group className="mb-3" controlId="contact-form-name">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="name"
-                  placeholder="Enter the name"
-                  value={values.name}
-                  onChange={handleChange}
-                  isValid={touched.name && !errors.name}
-                  isInvalid={touched.name && errors.name}
-                />
-                <Form.Control.Feedback type="invalid">
-                  {errors.name}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="contact-form-number">
-                <Form.Label>Number</Form.Label>
-                <Form.Control
-                  type="tel"
-                  name="number"
-                  placeholder="Enter the number"
-                  value={values.number}
-                  onChange={handleChange}
-                  isValid={touched.number && !errors.number}
-                  isInvalid={touched.number && errors.number}
-                />
-                <Form.Control.Feedback type="invalid">
-                  {errors.number}
-                </Form.Control.Feedback>
-              </Form.Group>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button
-                type="submit"
-                variant="outline-success"
-                className={styles.modal_button}
-                disabled={isSubmitting}
-              >
-                Add
-              </Button>
-              <Button
-                variant="outline-secondary"
-                onClick={handleCLose}
-                className={styles.modal_button}
-              >
-                Cancel
-              </Button>
-            </Modal.Footer>
-          </Form>
-        )}
-      </Formik>
+      <div style={{ backgroundColor: '#ececec' }}>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={schema}
+          onSubmit={async values => {
+            console.log(values);
+            if (values.name === '' || values.number === '') return;
+            try {
+              await dispatch(contactsOperations.addContact(values)).unwrap();
+              toast.success('Contact created');
+              handleCLose();
+            } catch (e) {
+              toast.error('Error occured');
+            }
+          }}
+        >
+          {({
+            values,
+            handleSubmit,
+            handleChange,
+            touched,
+            errors,
+            isSubmitting,
+          }) => (
+            <Form onSubmit={handleSubmit} noValidate>
+              <Modal.Header closeButton style={{ backgroundColor: '#c3ddda' }}>
+                <Modal.Title>New contact</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Form.Group className="mb-3" controlId="contact-form-name">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    placeholder="Enter the name"
+                    value={values.name}
+                    onChange={handleChange}
+                    isValid={touched.name && !errors.name}
+                    isInvalid={touched.name && errors.name}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.name}
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="contact-form-number">
+                  <Form.Label>Number</Form.Label>
+                  <Form.Control
+                    type="tel"
+                    name="number"
+                    placeholder="Enter the number"
+                    value={values.number}
+                    onChange={handleChange}
+                    isValid={touched.number && !errors.number}
+                    isInvalid={touched.number && errors.number}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.number}
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  type="submit"
+                  variant="outline-success"
+                  className={styles.modal_button}
+                  disabled={isSubmitting}
+                >
+                  Add
+                </Button>
+                <Button
+                  variant="outline-secondary"
+                  onClick={handleCLose}
+                  className={styles.modal_button}
+                >
+                  Cancel
+                </Button>
+              </Modal.Footer>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </Modal>
   );
 };

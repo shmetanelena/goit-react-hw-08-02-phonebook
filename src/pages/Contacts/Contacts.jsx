@@ -17,7 +17,7 @@ export const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <Container style={{ maxWidth: 800 }}>
       <ContactForm show={isModal} handleCLose={() => setIsModal(false)} />
       <Col className=" d-flex justify-content-end my-3">
         <Button variant="outline-success" onClick={() => setIsModal(true)}>

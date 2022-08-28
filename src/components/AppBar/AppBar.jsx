@@ -5,17 +5,18 @@ import { authSelectors } from 'redux/auth';
 import { useSelector } from 'react-redux';
 import { Navbar } from 'react-bootstrap';
 import image from './logo-blue.png';
+import styles from './AppBar.module.css';
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   return (
-    <Navbar bg="light">
+    <Navbar className={styles.menu}>
       <Navbar.Brand href="#home">
         <img
           alt=""
           src={image}
-          width="50"
+          width="60"
           height="50"
           className="d-inline-block align-top"
         />{' '}
