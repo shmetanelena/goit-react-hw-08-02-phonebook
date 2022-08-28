@@ -27,11 +27,6 @@ export const ContactListItem = ({ id, name, number }) => {
             <Card.Title>{name}</Card.Title>
             <Card.Subtitle>{number}</Card.Subtitle>
           </Col>
-          {/* <Col className="d-flex justify-content-end">
-            <Button variant="outline-success" onClick={handleDelete}>
-              Delete
-            </Button>
-          </Col> */}
         </Row>
       </Card.Body>
       <Card.Footer>

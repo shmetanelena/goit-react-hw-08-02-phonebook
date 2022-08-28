@@ -1,4 +1,3 @@
-import styles from './Contacts.module.css';
 import { ContactForm } from 'components/ContactForm';
 import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
@@ -6,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelectors, contactsOperations } from 'redux/contacts';
 import { Container, Col, Button, Spinner } from 'react-bootstrap';
+import styles from './Contacts.module.css';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,9 @@ export const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Container style={{ maxWidth: 800 }}>
-      <ContactForm show={isModal} handleCLose={() => setIsModal(false)} />
+    <Container className={styles.container}>
+      {isModal && <ContactForm handleCLose={() => setIsModal(false)} />}
+
       <Col className=" d-flex justify-content-end my-3">
         <Button variant="outline-success" onClick={() => setIsModal(true)}>
           Add contact

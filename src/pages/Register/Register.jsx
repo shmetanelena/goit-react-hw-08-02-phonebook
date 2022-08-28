@@ -1,4 +1,3 @@
-import styles from './Register.module.css';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { authOperations } from 'redux/auth';
@@ -11,8 +10,8 @@ export const Register = () => {
 
   return (
     <Container className="d-flex justify-content-center mt-5">
-      <Card className={styles.card}>
-        <Card.Header>Registration</Card.Header>
+      <Card className="card">
+        <Card.Header className="header">Registration</Card.Header>
         <Card.Body>
           <Formik
             initialValues={{ name: '', email: '', password: '' }}

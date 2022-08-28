@@ -5,23 +5,19 @@ import { authSelectors } from 'redux/auth';
 import { useSelector } from 'react-redux';
 import { Navbar } from 'react-bootstrap';
 import image from './logo-blue.png';
+import { NavLink } from 'react-router-dom';
 import styles from './AppBar.module.css';
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   return (
-    <Navbar className={styles.menu}>
-      <Navbar.Brand href="#home">
-        <img
-          alt=""
-          src={image}
-          width="60"
-          height="50"
-          className="d-inline-block align-top"
-        />{' '}
-      </Navbar.Brand>
-      <Navbar.Brand>Contacts app</Navbar.Brand>
+    <Navbar className="header d-flex justify-content-center">
+      <div className="mx-2">
+        <Navbar.Brand as={NavLink} to="/">
+          <img alt="" src={image} className={styles.img} /> Contacts app
+        </Navbar.Brand>
+      </div>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </Navbar>

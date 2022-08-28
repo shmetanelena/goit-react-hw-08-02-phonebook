@@ -6,7 +6,7 @@ import { Button, Form, Modal } from 'react-bootstrap';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
-export const ContactForm = ({ show, handleCLose }) => {
+export const ContactForm = ({ handleCLose }) => {
   const dispatch = useDispatch();
   const contacts = useSelector(contactsSelectors.getContacts);
 
@@ -44,10 +44,10 @@ export const ContactForm = ({ show, handleCLose }) => {
         'Invalid value'
       ),
   });
-  //background-color: #ececec;
+
   return (
-    <Modal show={show} onHide={handleCLose} keyboard>
-      <div style={{ backgroundColor: '#ececec' }}>
+    <Modal show keyboard onHide={handleCLose}>
+      <div className={styles.modal}>
         <Formik
           initialValues={initialValues}
           validationSchema={schema}
@@ -72,7 +72,7 @@ export const ContactForm = ({ show, handleCLose }) => {
             isSubmitting,
           }) => (
             <Form onSubmit={handleSubmit} noValidate>
-              <Modal.Header closeButton style={{ backgroundColor: '#c3ddda' }}>
+              <Modal.Header closeButton className="header">
                 <Modal.Title>New contact</Modal.Title>
               </Modal.Header>
               <Modal.Body>
